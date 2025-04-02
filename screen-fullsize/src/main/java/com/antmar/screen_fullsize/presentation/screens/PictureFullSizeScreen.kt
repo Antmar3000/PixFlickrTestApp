@@ -61,7 +61,6 @@ fun PictureFullSizeScreen(viewModel: PictureFullSizeViewModel, navController: Na
                     tint = MaterialTheme.colorScheme.scrim,
                     contentDescription = "close",
                     modifier = Modifier.clickable {
-                        Log.d("myLog", url)
                         navController.popBackStack()
                     }
                 )

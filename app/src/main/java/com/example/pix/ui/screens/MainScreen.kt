@@ -1,11 +1,9 @@
 package com.example.pix.ui.screens
 
-import android.util.Log
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
@@ -21,7 +19,6 @@ import com.antmar.screen_fullsize.presentation.viewmodels.PictureFullSizeViewMod
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.withTimeout
 
 @Composable
 fun MainScreen(paddingValues: PaddingValues) {
@@ -44,9 +41,7 @@ fun MainScreen(paddingValues: PaddingValues) {
 //    LaunchedEffect(Unit) {
 //        try {
 //            withContext(NonCancellable) {
-//                withTimeout(500) {
-//                    gridViewModel.clearDB()
-//                }
+//                gridViewModel.clearDB()
 //            }
 //        } catch (e: Exception) {
 //            Log.d("myLog", "clear fail, $e")
