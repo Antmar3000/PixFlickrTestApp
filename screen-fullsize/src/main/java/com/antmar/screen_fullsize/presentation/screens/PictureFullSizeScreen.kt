@@ -43,11 +43,7 @@ fun PictureFullSizeScreen(viewModel: PictureFullSizeViewModel, navController: Na
 
     val url = viewModel.urlState.collectAsState().value
 
-    fun getHighResUrl(url: String): String {
-        return if (url.endsWith("_m.jpg")) {
-            url.replace("_m.jpg", "_b.jpg")
-        } else url
-    }
+
 
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -75,7 +71,7 @@ fun PictureFullSizeScreen(viewModel: PictureFullSizeViewModel, navController: Na
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.background
                 )) {
-                ZoomableImage(getHighResUrl(url))
+                ZoomableImage(url)
             }
         }
     }

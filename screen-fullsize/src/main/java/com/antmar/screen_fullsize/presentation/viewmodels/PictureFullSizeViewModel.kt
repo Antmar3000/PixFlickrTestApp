@@ -24,8 +24,14 @@ class PictureFullSizeViewModel @Inject constructor (
     private fun collectUrl () {
         viewModelScope.launch {
             sharedUrl.invoke().collect {
-                _urlState.value = it
+                _urlState.value = getHighResUrl(it)
             }
         }
+    }
+
+    private fun getHighResUrl(url: String): String {
+        return if (url.endsWith("_m.jpg")) {
+            url.replace("_m.jpg", "_b.jpg")
+        } else url
     }
 }
